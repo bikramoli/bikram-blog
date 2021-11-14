@@ -2,7 +2,7 @@ import React from "react";
 
 export const Datas = [
     {
-        id: 1,
+        id: 0,
         tag: "Development",
         title: "HTML & CSS basis",
         description: "This course is all about the basic of html and css, also consist of basic static web-app development",
@@ -10,7 +10,7 @@ export const Datas = [
         author: "Ron"
     },
     {
-        id: 2,
+        id: 1,
         tag: "Development",
         title: "Android app development",
         description: "This is full course of android app development using java, retrofit, JavaRX",
@@ -18,7 +18,7 @@ export const Datas = [
         author: "Hermainoe"
     },
     {
-        id: 3,
+        id: 2,
         tag: "News",
         title: "Software Developer Job in USA",
         description: "This is full course of android app development using java, retrofit, JavaRX",

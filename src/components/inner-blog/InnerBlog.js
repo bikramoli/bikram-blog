@@ -3,17 +3,20 @@ import { Link } from 'react-router-dom';
 
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { Datas } from '../outer-blog/Data';
+import { useParams } from 'react-router';
 
 import './InnerBlog.css'
 
 function InnerBlog() {
+    var { id } = useParams();
+
     return (
         <div className="innerBlogCover">
             <div className="innerBlog">
-                <h1>{Datas[0].tag}</h1>
-                <h2>{Datas[0].title}</h2>
-                <p>{Datas[0].description}</p>
-                <strong>{Datas[0].author}</strong>
+                <h1>{Datas[id].tag}</h1>
+                <h2>{Datas[id].title}</h2>
+                <p>{Datas[id].description}</p>
+                <strong>{Datas[id].author}</strong>
                 <p>{Datas[1].content}</p>
 
             </div>
