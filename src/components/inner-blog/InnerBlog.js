@@ -11,6 +11,7 @@ function InnerBlog() {
             <h2>{Datas[0].title}</h2>
             <p>{Datas[0].description}</p>
             <strong>{Datas[0].author}</strong>
+            <p>{Datas[1].content}</p>
 
         </div>
     )

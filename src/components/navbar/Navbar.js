@@ -28,7 +28,7 @@ function Navbar() {
                     <div className="linkGroup">
                         <a><Link to="/">Home</Link></a>
                         <a><Link to="/about">About</Link></a>
-                        <a><Link to="/github"><FaGithub /></Link></a>
+                        <a><a href="https://github.com/bikramoli"><FaGithub /></a></a>
                         <a><Link to="/github"><FaTwitter /></Link></a>
                     </div>
                 </div>
