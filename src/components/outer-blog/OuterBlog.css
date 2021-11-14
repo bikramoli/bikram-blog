@@ -1,0 +1,33 @@
+.outerBlog{
+    padding: 1rem;
+    width: 500px;
+    height: 270px;
+    text-decoration: none;
+    color: black;
+    border-bottom: solid black;
+    margin: 2rem;
+}
+.title{
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+.author{
+    padding-top: 0rem;
+}
+.tag{
+    height: 20px;
+    padding: 0.3rem;
+    background-color: rgb(207, 176, 176);
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+}
+.base{
+    margin-top: 2rem;
+}
+.author{
+    float: right;
+    list-style-type: none;
+}
+

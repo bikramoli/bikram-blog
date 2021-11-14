@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './Navbar.css'
 
-function Navba() {
+function Navbar() {
     const [state, setstate] = useState({
         toggle: false
     })
@@ -25,12 +25,15 @@ function Navba() {
                     <FaAlignRight />
                 </button>
                 <div className={state.toggle ? "nav-links show-nav" : "nav-links"}>
-                    <a><Link to="/">Home</Link></a>
-                    <a><Link to="/about">About</Link></a>
-                    <a><Link to="/github"><FaGithub /></Link></a>
+                    <div className="linkGroup">
+                        <a><Link to="/">Home</Link></a>
+                        <a><Link to="/about">About</Link></a>
+                        <a><Link to="/github"><FaGithub /></Link></a>
+                        <a><Link to="/github"><FaTwitter /></Link></a>
+                    </div>
                 </div>
             </div>
         </>
     );
 }
-export default Navba
+export default Navbar
