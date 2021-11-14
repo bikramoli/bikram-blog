@@ -1,0 +1,28 @@
+.blogs{
+    display: grid;
+    gap: 2rem;
+    margin: 2rem ;
+    height: 370px;
+    width: 235px;
+    max-width: 1170px;
+    gap: 2rem;
+}
+@media screen and (min-width: 768px) {
+    .blogs{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+/* .productList{
+    display: grid;
+    gap: 2rem;
+    margin: 2rem ;
+    height: 370px;
+    width: 235px;
+    max-width: 1170px;
+    gap: 2rem;
+}
+@media screen and (min-width: 768px) {
+    .productList{
+        grid-template-columns: repeat(4, 1fr);
+    }
+} */
