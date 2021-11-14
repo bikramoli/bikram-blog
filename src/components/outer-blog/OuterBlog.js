@@ -8,7 +8,7 @@ import './OuterBlog.css';
 
 function OuterBlog(props) {
     return (
-        <a><Link to="/about">
+        <a><Link to="/innerBlog">
             <div className="outerBlog">
                 <span className="tag">{props.tag}</span>
                 <h4 className="title">{props.title}</h4>
