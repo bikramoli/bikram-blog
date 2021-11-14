@@ -13,20 +13,22 @@ body{
     background: rgb(245, 229, 229);
 }
 .innerBlogCover{
-    display: grid;
+    display:grid;
     gap: 2rem;
     margin: 2rem ;
     height: 1000px;
     width: 500px;
     max-width: 1170px;
     gap: 2rem;
+    
 }
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
     .innerBlogCover{
         grid-template-columns: repeat(4, 1fr);
     }
-}
+} */
 .innerBlog1{
+    
     margin-top: 7rem;
     font-size: 20px;
     width: 500px;

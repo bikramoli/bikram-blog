@@ -7,6 +7,15 @@
     border-bottom: solid black;
     margin: 2rem;
 }
+.outerBlog:hover{
+    background-color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 120%;
+    width: 410px;
+    height: 280px;
+    box-shadow: 2px 8px 2px 1px #969696;
+}
 .title{
     padding-bottom: 1rem;
     padding-top: 1rem;

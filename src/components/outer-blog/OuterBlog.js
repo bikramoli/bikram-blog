@@ -14,9 +14,12 @@ function OuterBlog(props) {
         console.log(props.id)
         history.push(`/innerBlog/${props.id}`);
     }
+    function handleMouseOver() {
+
+    }
     return (
 
-        <div className="outerBlog" onClick={handleRoute}>
+        <div className="outerBlog" onClick={handleRoute} onMouseOver={handleMouseOver}>
 
             <span className="tag">{props.tag}</span>
             <h4 className="title">{props.title}</h4>
