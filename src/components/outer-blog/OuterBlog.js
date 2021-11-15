@@ -30,7 +30,7 @@ function OuterBlog(props) {
                 </a>
                 <a className="author">
                     <strong> {props.author}</strong>
-                    <li>2021/2/9</li>
+                    <li>{props.date}</li>
                 </a>
             </div>
         </div>
