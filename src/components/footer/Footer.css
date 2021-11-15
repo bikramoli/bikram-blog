@@ -3,16 +3,17 @@
     bottom: 0;
     height: 50px;
     width: 100%;
-    background: rgb(223, 206, 206);
+    background: blueviolet;
     text-align: center;
     box-shadow: 2px 1px 2px 1px #969696;
+    color: white;
 
 }
 .footer h5{
     font-size: 15px;
 }
 .date{
-    color: red;
+    color: white;
 }
 
 
