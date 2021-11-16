@@ -4,7 +4,6 @@
     height: 270px;
     text-decoration: none;
     color: black;
-    border-bottom: solid blueviolet;
     margin: 2rem;
 }
 .outerBlog:hover{
@@ -26,7 +25,6 @@
 .tag{
     height: 20px;
     padding: 0.3rem;
-    background-color: blueviolet;
     color: white;
     font-weight: bold;
 }

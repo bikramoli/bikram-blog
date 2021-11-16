@@ -1,3 +1,4 @@
+
 /* elements */
 .linkGroup a{
     padding: 2px 0;
@@ -7,9 +8,7 @@
     display: inline-block;
     color: rgb(20, 2, 2);
     font-weight: bold ;
-    font-size: 18px;
-    
-    
+    font-size: 18px; 
 }
 
 button{
@@ -31,6 +30,7 @@ button{
     background-color: white;
     padding: 1px;
     box-shadow: 2px 1px 2px 1px #969696;
+    border-top: solid #8A2BE2 10px;
 }
 
 .links{

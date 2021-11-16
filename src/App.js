@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Home from './pages/Home';
 import InnerBlog from './components/inner-blog/InnerBlog';
 import Footer from './components/footer/Footer';
-import About from './components/about/About';
+import About from './pages/About';
 
 function App() {
   return (
