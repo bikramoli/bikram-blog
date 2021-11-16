@@ -31,7 +31,7 @@ function Navbar() {
                 <div className={state.toggle ? "nav-links show-nav" : "nav-links"}>
                     <div className="linkGroup">
                         <a><Link to="/">Home</Link></a>
-                        <a><Link to="/about">About</Link></a>
+                        <a><Link to="/about">My</Link></a>
                         <a><a href="https://github.com/bikramoli"><FaGithub /></a></a>
                         <a><a href="https://twitter.com/bikramoli75"><FaTwitter /></a></a>
                         <a><FaTools /></a>

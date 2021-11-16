@@ -72,7 +72,7 @@ export const Datas = [
         description: "This is full course of android app development using java, retrofit, JavaRX",
         content: "",
         author: "Hermainoe",
-        date: "Sep2 2021"
+        date: "8th Aug 2021"
     },
     {
         id: 2,
