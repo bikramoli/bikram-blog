@@ -25,7 +25,7 @@ function Navbar() {
         <div>
             <div className="top-nav"></div>
             <div className="navBar" style={{ borderTop: `solid ${Theme.color} 10px` }}>
-                <button onClick={Toggle}>
+                <button onClick={Toggle} className="toggle">
                     <FaAlignRight />
                 </button>
                 <div className={state.toggle ? "nav-links show-nav" : "nav-links"}>
@@ -34,7 +34,14 @@ function Navbar() {
                         <a><Link to="/about">My</Link></a>
                         <a><a href="https://github.com/bikramoli"><FaGithub /></a></a>
                         <a><a href="https://twitter.com/bikramoli75"><FaTwitter /></a></a>
-                        <a><FaTools /></a>
+                        <a><div class="dropdown">
+                            <a class="dropbtn"><FaTools /></a>
+                            <div class="dropdown-content">
+                                <a href="#">Link 1</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+                        </div></a>
                         <a><Themes /></a>
 
                     </div>
