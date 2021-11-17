@@ -2,17 +2,16 @@ import React from 'react';
 import { Theme } from '../theme/Theme';
 
 import './Footer.css';
-import colorContext from '../navbar/Navbar';
 
-function Footer() {
+
+function Footer(ThemeColor) {
     return (
 
-        <div className="footer" style={{ background: Theme.color }}>
-            <colorContext.consumer>
-                <strong className="licence">Developed by Bikram Oli</strong><span>{color}</span>
-                <h5>Copyright @Bikram{" "}<span className="date">2021</span></h5>
-            </colorContext.consumer>
+        <div className="footer" style={{ background: ThemeColor }}>
+            <strong className="licence">Developed by Bikram Oli</strong>
+            <h5>Copyright @Bikram{" "}<span className="date">2021</span></h5>
         </div>
+
     )
 }
 export default Footer

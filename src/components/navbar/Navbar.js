@@ -11,51 +11,54 @@ import './Navbar.css'
 import Themes from "../theme/Themes";
 
 // This is create context to share data between components
-export const colorContext = createContext()
 
-function Navbar() {
-    const [state, setstate] = useState({
-        toggle: false,
-        ThemeColor: ""
-    })
+
+function useNavbar() {
+    const [toggle, setToggle] = useState(false)
+
+    const [ThemeColor, setThemeColor] = useState("#8A2BE2")
+
     function Toggle() {
-        setstate(
+        setToggle(
             {
-                toggle: !state.toggle
+                ...toggle,
+                toggle: !toggle
             }
         )
     }
     function changeColor1() {
-        setstate({
-            ...state,
+        setThemeColor({
             ThemeColor: "#7CFC00"
         })
+
     };
 
     function changecolor2() {
-        setstate({
-            ...state,
+        setThemeColor({
+            ...ThemeColor,
             ThemeColor: "#708090"
         })
     };
 
     function changeColor3() {
-        setstate({
-            ...state,
+        setThemeColor({
+            ...ThemeColor,
             ThemeColor: "#8A2BE2"
         })
     };
 
-    console.log(state.ThemeColor)
-    return (
-        <div>
-            <div className="top-nav"></div>
-            <colorContext.Provider value={state.ThemeColor}>
-                <div className="navBar" style={{ borderTop: `solid ${Theme.color} 10px` }}>
+    console.log(ThemeColor)
+    return {
+        ThemeColor,
+        render: (
+            <div>
+                <div className="top-nav"></div>
+
+                <div className="navBar" style={{ borderTop: `solid ${ThemeColor} 10px` }}>
                     <button onClick={Toggle} className="toggle">
                         <FaAlignRight />
                     </button>
-                    <div className={state.toggle ? "nav-links show-nav" : "nav-links"}>
+                    <div className={toggle ? "nav-links show-nav" : "nav-links"}>
                         <div className="linkGroup">
                             <a><Link to="/">Home</Link></a>
                             <a><Link to="/about">My</Link></a>
@@ -64,9 +67,9 @@ function Navbar() {
                             <a><div class="dropdown">
                                 <a class="dropbtn"><FaTools /></a>
                                 <div class="dropdown-content">
-                                    <a onClick={changeColor1} style={{ color: Theme.color3 }}>Bluevilote</a>
-                                    <a onClick={changecolor2} style={{ color: Theme.color2 }}>Black</a>
-                                    <a onClick={changeColor3} style={{ color: Theme.color1 }}>Gray</a>
+                                    <a onClick={changeColor1} style={{ color: Theme.color }}>Bluevilote</a>
+                                    <a onClick={changecolor2} style={{ color: Theme.color }}>Black</a>
+                                    <a onClick={changeColor3} style={{ color: Theme.color }}>Gray</a>
                                 </div>
                             </div></a>
                             <a><Themes /></a>
@@ -74,9 +77,10 @@ function Navbar() {
                         </div>
                     </div>
                 </div>
-            </colorContext.Provider>
-        </div>
-    );
+
+            </div>
+        )
+    };
 
 }
-export default Navbar
+export default useNavbar
