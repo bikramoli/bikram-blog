@@ -21,6 +21,15 @@ function Navbar() {
             }
         )
     }
+    function changeColor1() {
+        console.log(Theme.color1)
+    }
+    function changecolor2() {
+        console.log(Theme.color2)
+    }
+    function changeColor3() {
+        console.log(Theme.color3)
+    }
     return (
         <div>
             <div className="top-nav"></div>
@@ -37,9 +46,9 @@ function Navbar() {
                         <a><div class="dropdown">
                             <a class="dropbtn"><FaTools /></a>
                             <div class="dropdown-content">
-                                <a href="#">Link 1</a>
-                                <a href="#">Link 2</a>
-                                <a href="#">Link 3</a>
+                                <a onClick={changeColor1} style={{ color: Theme.color3 }}>Bluevilote</a>
+                                <a onClick={changecolor2} style={{ color: Theme.color2 }}>Black</a>
+                                <a onClick={changeColor3} style={{ color: Theme.color }}>Gray</a>
                             </div>
                         </div></a>
                         <a><Themes /></a>
