@@ -9,6 +9,7 @@ import Footer from './components/footer/Footer';
 import About from './pages/About';
 
 function App() {
+
   return (
     <BrowserRouter>
       <Navbar />

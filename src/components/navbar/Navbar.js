@@ -10,9 +10,10 @@ import { Theme } from "../theme/Theme";
 import './Navbar.css'
 import Themes from "../theme/Themes";
 
-function Navbar() {
+function Navbar(props) {
     const [state, setstate] = useState({
-        toggle: false
+        toggle: false,
+        ThemeColor: " "
     })
     function Toggle() {
         setstate(
@@ -22,18 +23,31 @@ function Navbar() {
         )
     }
     function changeColor1() {
-        console.log(Theme.color1)
-    }
+        setstate({
+            ...state,
+            ThemeColor: "#7CFC00"
+        })
+    };
+
     function changecolor2() {
-        console.log(Theme.color2)
-    }
+        setstate({
+            ...state,
+            ThemeColor: "#708090"
+        })
+    };
+
     function changeColor3() {
-        console.log(Theme.color3)
-    }
+        setstate({
+            ...state,
+            ThemeColor: "#8A2BE2"
+        })
+    };
+
+    console.log(state.ThemeColor)
     return (
         <div>
             <div className="top-nav"></div>
-            <div className="navBar" style={{ borderTop: `solid ${Theme.color} 10px` }}>
+            <div className="navBar" style={{ borderTop: `solid ${state.ThemeColor} 10px` }}>
                 <button onClick={Toggle} className="toggle">
                     <FaAlignRight />
                 </button>
