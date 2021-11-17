@@ -4,12 +4,15 @@ import { Theme } from '../theme/Theme';
 import './Footer.css';
 
 
-function Footer(ThemeColor) {
+function Footer(Themecolor) {
+    console.log(Themecolor.Themecolor)
+
     return (
 
-        <div className="footer" style={{ background: ThemeColor }}>
+        <div className="footer" style={{ background: Themecolor.Themecolor }}>
             <strong className="licence">Developed by Bikram Oli</strong>
-            <h5>Copyright @Bikram{" "}<span className="date">2021</span></h5>
+            <h5>Copyright @Bikram<span className="date">2021</span></h5>
+
         </div>
 
     )

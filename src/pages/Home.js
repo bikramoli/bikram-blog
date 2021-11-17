@@ -4,11 +4,11 @@ import Header from '../components/header/Header';
 import OuterBlogMain from '../components/outer-blog/OuterBlogMain';
 
 
-function Home() {
+function Home(Themecolor) {
     return (
         <div>
             <Header />
-            <OuterBlogMain />
+            <OuterBlogMain Themecolor={Themecolor} />
         </div>
 
     )

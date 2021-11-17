@@ -30,7 +30,7 @@ export const Datas = [
         date: "Sep2 2021"
     },
     {
-        id: 2,
+        id: 3,
         tag: "News",
         title: "Software Developer Job in USA",
         description: "This is full course of android app development using java, retrofit, JavaRX",
@@ -39,7 +39,7 @@ export const Datas = [
         date: "Sep2 2021"
     },
     {
-        id: 2,
+        id: 4,
         tag: "News",
         title: "Software Developer Job in USA",
         description: "This is full course of android app development using java, retrofit, JavaRX",
@@ -48,7 +48,7 @@ export const Datas = [
         date: "Sep2 2021"
     },
     {
-        id: 2,
+        id: 5,
         tag: "News",
         title: "Software Developer Job in USA",
         description: "This is full course of android app development using java, retrofit, JavaRX",
@@ -57,7 +57,7 @@ export const Datas = [
         date: "Sep2 2021"
     },
     {
-        id: 2,
+        id: 6,
         tag: "News",
         title: "Software Developer Job in USA",
         description: "This is full course of android app development using java, retrofit, JavaRX",
@@ -65,22 +65,5 @@ export const Datas = [
         author: "Hermainoe",
         date: "Sep2 2021"
     },
-    {
-        id: 2,
-        tag: "News",
-        title: "Software Developer Job in USA",
-        description: "This is full course of android app development using java, retrofit, JavaRX",
-        content: "",
-        author: "Hermainoe",
-        date: "8th Aug 2021"
-    },
-    {
-        id: 2,
-        tag: "News",
-        title: "Software Developer Job in USA",
-        description: "This is full course of android app development using java, retrofit, JavaRX",
-        content: "",
-        author: "Hermainoe",
-        date: "Sep2 2021"
-    }
+
 ]

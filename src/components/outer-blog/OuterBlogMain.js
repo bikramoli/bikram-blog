@@ -3,9 +3,11 @@ import React from 'react';
 import OuterBlog from './OuterBlog';
 import { Datas } from './Data';
 
+
 import './OuterBlogMain.css'
 
 function OuterBlogMain() {
+
     return (
         <div className="blogs">
             {Datas.map(function (data) {

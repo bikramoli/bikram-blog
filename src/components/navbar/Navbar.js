@@ -8,7 +8,7 @@ import { Theme } from "../theme/Theme";
 
 
 import './Navbar.css'
-import Themes from "../theme/Themes";
+
 
 // This is create context to share data between components
 
@@ -16,37 +16,15 @@ import Themes from "../theme/Themes";
 function useNavbar() {
     const [toggle, setToggle] = useState(false)
 
-    const [ThemeColor, setThemeColor] = useState("#8A2BE2")
+    const [ThemeColor, setThemeColor] = useState("")
 
     function Toggle() {
         setToggle(
             {
-                ...toggle,
                 toggle: !toggle
             }
         )
     }
-    function changeColor1() {
-        setThemeColor({
-            ThemeColor: "#7CFC00"
-        })
-
-    };
-
-    function changecolor2() {
-        setThemeColor({
-            ...ThemeColor,
-            ThemeColor: "#708090"
-        })
-    };
-
-    function changeColor3() {
-        setThemeColor({
-            ...ThemeColor,
-            ThemeColor: "#8A2BE2"
-        })
-    };
-
     console.log(ThemeColor)
     return {
         ThemeColor,
@@ -66,13 +44,14 @@ function useNavbar() {
                             <a><a href="https://twitter.com/bikramoli75"><FaTwitter /></a></a>
                             <a><div class="dropdown">
                                 <a class="dropbtn"><FaTools /></a>
+                                <a>{ThemeColor}</a>
                                 <div class="dropdown-content">
-                                    <a onClick={changeColor1} style={{ color: Theme.color }}>Bluevilote</a>
-                                    <a onClick={changecolor2} style={{ color: Theme.color }}>Black</a>
-                                    <a onClick={changeColor3} style={{ color: Theme.color }}>Gray</a>
+                                    <a onClick={function () { setThemeColor("#8A2BE2") }} style={{ color: Theme.color }}>Bluevilote</a>
+                                    <a onClick={function () { setThemeColor("#00FF00") }} style={{ color: Theme.color }}>Lime</a>
+                                    <a onClick={function () { setThemeColor("#2F4F4F") }} style={{ color: Theme.color }}>DarkGray</a>
                                 </div>
                             </div></a>
-                            <a><Themes /></a>
+
 
                         </div>
                     </div>

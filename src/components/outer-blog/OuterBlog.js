@@ -3,6 +3,7 @@ import { FaArrowAltCircleRight } from "react-icons/fa";
 import { useHistory } from "react-router";
 import { Theme } from "../theme/Theme";
 
+
 import './OuterBlog.css';
 
 function OuterBlog(props) {
