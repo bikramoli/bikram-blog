@@ -15,7 +15,7 @@ function App() {
     <BrowserRouter>
       {render}
       <Switch>
-        <Route exact="true" path="/"><Home Themecolor={ThemeColor} /></Route>
+        <Route exact="true" path="/"><Home Themec={ThemeColor} /></Route>
         <Route exact="true" path="/innerBlog/:id" ><InnerBlog /></Route>
         <Route exact="true" path="/about" component={About} />
         {/* <Redirect to="/" /> //manage to return page back to its initial position when mistyped in url */}

@@ -5,7 +5,6 @@ import { FaGithub } from "react-icons/fa";
 import { FaTools } from "react-icons/fa";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Navbar.css'
-import { Theme } from "../theme/Theme";
 
 
 function useNavbar() {
@@ -59,15 +58,12 @@ function useNavbar() {
                             <a><a href="https://twitter.com/bikramoli75"><FaTwitter /></a></a>
                             <a><div class="dropdown">
                                 <a class="dropbtn"><FaTools /></a>
-                                <a>{ThemeColor}</a>
                                 <div className="dropdown-content">
                                     <a onClick={handleClick1} style={{ color: isClick1 ? ThemeColor : "#000000" }}>Bluevilote</a>
                                     <a onClick={handleClick2} style={{ color: isClick2 ? ThemeColor : "#000000" }}>Lime</a>
                                     <a onClick={handleClick3} style={{ color: isClick3 ? ThemeColor : "#000000" }}>DarkGray</a>
                                 </div>
                             </div></a>
-
-
                         </div>
                     </div>
                 </div>

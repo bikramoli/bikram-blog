@@ -4,11 +4,12 @@ import Header from '../components/header/Header';
 import OuterBlogMain from '../components/outer-blog/OuterBlogMain';
 
 
-function Home(Themecolor) {
+function Home(props) {
     return (
         <div>
+
             <Header />
-            <OuterBlogMain Themecolor={Themecolor} />
+            <OuterBlogMain Themecolor={props.Themec} />
         </div>
 
     )

@@ -2,12 +2,12 @@ import React from "react";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { useHistory } from "react-router";
 import { Theme } from "../theme/Theme";
+import useNavbar from "../navbar/Navbar";
 
 
 import './OuterBlog.css';
 
 function OuterBlog(props) {
-
     const history = useHistory();
 
     function handleRoute() {
@@ -16,9 +16,9 @@ function OuterBlog(props) {
     }
 
     return (
-        <div className="outerBlog" style={{ borderBottom: `solid ${Theme.color}` }} onClick={handleRoute}>
+        <div className="outerBlog" style={{ borderBottom: `solid ${props.ThemeColor}` }} onClick={handleRoute}>
 
-            <span className="tag" style={{ background: Theme.color }}>{props.tag}</span>
+            <span className="tag" style={{ background: props.ThemeColor }}>{props.tag}</span>
             <h4 className="title">{props.title}</h4>
             <p>{props.description}</p>
             <div className="base">
