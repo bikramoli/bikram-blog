@@ -1,6 +1,5 @@
 import React from "react";
 import { Theme } from "../components/theme/Theme";
-import Header from "../components/header/Header";
 import me from "./images/me.png";
 
 import './About.css'
@@ -10,7 +9,7 @@ function About() {
     const cl = '>'
     return (
         <div className="about">
-            <img src={me} className="about-img"></img>
+            <img src={me} alt="Person using computer" className="about-img"></img>
             <article>
                 <h2><span>{op}article <span style={{ color: "#4169E1" }}>className=<span style={{ color: "#FFA500" }}>"Developer-Info"</span></span>{cl}</span></h2>
                 <p className="animation-data">Hello my name is Bikram Oli and I am a developer, If you want to know more about me please click below</p>

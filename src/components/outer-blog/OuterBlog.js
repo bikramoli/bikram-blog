@@ -23,14 +23,14 @@ function OuterBlog(props) {
             <p>{props.description}</p>
             <div className="base">
 
-                <a>Learn more{" "}
+                <span>Learn more{" "}
                     <span><FaArrowAltCircleRight /></span>
-                </a>
+                </span>
 
-                <a className="author">
+                <span className="author">
                     <strong> {props.author}</strong>
                     <li>{props.date}</li>
-                </a>
+                </span>
             </div>
         </div>
 

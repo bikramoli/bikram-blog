@@ -1,6 +1,4 @@
 import React from "react";
-import { Theme } from "../theme/Theme";
-
 import './Header.css'
 import R from './images/R.png';
 import Learn from './images/Learn.png';
