@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import InnerBlog from './components/inner-blog/InnerBlog';
 import Footer from './components/footer/Footer';
 import About from './pages/About';
+import FetchApi from './pages/FetchApi';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route exact="true" path="/"><Home Themec={ThemeColor} /></Route>
         <Route exact="true" path="/innerBlog/:id" ><InnerBlog /></Route>
         <Route exact="true" path="/about" component={About} />
+        <Route exact="true" path="/fetchdata" component={FetchApi} />
         {/* <Redirect to="/" /> //manage to return page back to its initial position when mistyped in url */}
       </Switch>
       <Footer Themecolor={ThemeColor} />

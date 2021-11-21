@@ -62,6 +62,7 @@ function useNavbar() {
                                     <a onClick={handleClick1} style={{ color: isClick1 ? ThemeColor : "#000000" }}>Bluevilote</a>
                                     <a onClick={handleClick2} style={{ color: isClick2 ? ThemeColor : "#000000" }}>Lime</a>
                                     <a onClick={handleClick3} style={{ color: isClick3 ? ThemeColor : "#000000" }}>DarkGray</a>
+
                                 </div>
                             </div></a>
                         </div>
