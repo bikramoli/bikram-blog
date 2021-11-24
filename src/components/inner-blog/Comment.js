@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 
 import './Comment.css'
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure();
 
 const Comment = () => {
     const [state, setstate] = useState({
@@ -17,9 +20,7 @@ const Comment = () => {
             Comments: [...Comments, comments],
             Comment: ""
         })
-        window.setTimeout(() => {
-            alert("Successfully added")
-        }, 1000)
+        toast("Comment added successfully!!!", { position: toast.POSITION.TOP_CENTER })
     }
 
     return (
