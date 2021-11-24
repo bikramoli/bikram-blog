@@ -8,19 +8,14 @@ import './Navbar.css'
 
 
 function useNavbar() {
-    const [toggle, setToggle] = useState(false)
     const [ThemeColor, setThemeColor] = useState("")
     const [isClick1, setisClick1] = useState(false)
     const [isClick2, setisClick2] = useState(false)
     const [isClick3, setisClick3] = useState(false)
+    const [username, setUsername] = useState("Bishal")
+    const [isLogin, setIsLogin] = useState(true)
 
-    function Toggle() {
-        setToggle(
-            {
-                toggle: !toggle
-            }
-        )
-    }
+
     function handleClick1() {
         setThemeColor("#8A2BE2");
         setisClick1(true);
@@ -47,17 +42,15 @@ function useNavbar() {
                 <div className="top-nav"></div>
 
                 <div className="navBar" style={{ borderTop: `solid ${ThemeColor} 10px` }}>
-                    <button onClick={Toggle} className="toggle">
-                        <FaAlignRight />
-                    </button>
-                    <div className={toggle ? "nav-links show-nav" : "nav-links"}>
+                    {isLogin ? <Logout /> : <Login />}
+                    <div >
                         <div className="linkGroup">
                             <a><Link to="/">Home</Link></a>
                             <a><Link to="/about">My</Link></a>
                             <a><a href="https://github.com/bikramoli"><FaGithub /></a></a>
                             <a><a href="https://twitter.com/bikramoli75"><FaTwitter /></a></a>
-                            <a><div class="dropdown">
-                                <a class="dropbtn"><FaTools /></a>
+                            <a><div className="dropdown">
+                                <a className="dropbtn"><FaTools /></a>
                                 <div className="dropdown-content">
                                     <a onClick={handleClick1} style={{ color: isClick1 ? ThemeColor : "#000000" }}>Bluevilote</a>
                                     <a onClick={handleClick2} style={{ color: isClick2 ? ThemeColor : "#000000" }}>Lime</a>
@@ -72,6 +65,27 @@ function useNavbar() {
             </div>
         )
     };
+    function Logout() {
+        return (
+            <>
+                <div className="profile-dropdown" onClick={() => { alert("hello") }}>
+                    <img className="profile" src="https://www.pngall.com/wp-content/uploads/5/Profile-Avatar-PNG.png" alt="profile"></img>
+                    <strong className="name">Bikram</strong>
+                    <div className="logout">
+                        <a>Logout</a>
+                    </div>
+                </div>
+            </>
+        )
+    };
+
+    function Login() {
+        return (
+            <div className="profile-dropdown">
+                <strong className="name">Login</strong>
+            </div>
+        )
+    }
 
 }
 export default useNavbar

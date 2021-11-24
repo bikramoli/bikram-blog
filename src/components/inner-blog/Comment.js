@@ -24,14 +24,13 @@ const Comment = () => {
                 Comments: [...Comments, comments],
                 Comment: ""
             }) :
-            toast("Please add some comment", { position: toast.POSITION.TOP_CENTER })
-
+            toast("Please add some comment", { position: toast.POSITION.BOTTOM_CENTER })
     }
 
     return (
-        <div>
-            <h1>Comment Section</h1>
+        <>
             <form className='form'>
+                <h1>Comment Section</h1>
                 <label>Comment:</label>{" "}
                 <input className='form-input'
                     type='text'
@@ -49,17 +48,21 @@ const Comment = () => {
                         }
                     }>
                 </input>
-                <button onClick={handleSubmit}>Submit</button>
+                <div style={{ textAlign: "end" }}>
+                    <button onClick={handleSubmit}>Submit</button>
+                </div>
             </form>
             <div>
                 {state.Comments.map((commen, index) => {
                     const { Comment } = commen
                     return (
-                        <li key={index}>Comment{index + 1}:{" "}{Comment}</li>
+                        <div className="comment-list">
+                            <li key={index}><strong>Comment{index + 1}:</strong>{" "}{Comment}</li>
+                        </div>
                     )
                 })}
             </div>
-        </div>
+        </>
     )
 }
 export default Comment;

@@ -1,7 +1,11 @@
 .form{
-
+margin-left: 10rem;
+margin-right: 28rem;
 }
 .form-input{
     height: 150px;
     width: 100%;
+}
+.comment-list{
+    padding-left: 10rem;
 }
