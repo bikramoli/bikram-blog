@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { Datas } from '../outer-blog/Data';
 import { useParams } from 'react-router';
+import Comment from './Comment';
 
 import './InnerBlog.css'
 
@@ -18,7 +19,7 @@ function InnerBlog() {
                 <p>{Datas[id].description}</p>
                 <strong>{Datas[id].author}</strong>
                 <p>{Datas[1].content}</p>
-
+                <Comment />
             </div>
             <ul className="innerBlog1">
                 <li><Link to="/about"><FaArrowAltCircleRight />{" "}Introduction</Link></li>
@@ -26,6 +27,7 @@ function InnerBlog() {
                 <li><Link to="/about"><FaArrowAltCircleRight />{" "}Use of REST API in android app using retrofit of volley library</Link></li>
                 <li><Link to="/about"><FaArrowAltCircleRight />{" "}Conclusion</Link></li>
             </ul>
+
         </div>
     )
 }
