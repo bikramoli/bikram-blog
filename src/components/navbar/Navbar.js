@@ -12,8 +12,8 @@ function useNavbar() {
     const [isClick1, setisClick1] = useState(false)
     const [isClick2, setisClick2] = useState(false)
     const [isClick3, setisClick3] = useState(false)
-    const [username, setUsername] = useState("Bishal")
-    const [isLogin, setIsLogin] = useState(false)
+    const [isLogin, setIsLogin] = useState(true)
+    const [username, setUsername] = useState('Seejan')
 
 
     function handleClick1() {
@@ -45,7 +45,7 @@ function useNavbar() {
                     {
                         isLogin ?
                             <Logout />
-                            : <div className="profile-dropdown">
+                            : <div style={{ float: "right", margin: '0.5rem', marginRight: '1rem' }}>
                                 <Link to="/login">Login</Link>
                             </div>
                     }
@@ -76,7 +76,7 @@ function useNavbar() {
             <>
                 <div className="profile-dropdown" onClick={() => { alert("hello") }}>
                     <img className="profile" src="https://www.pngall.com/wp-content/uploads/5/Profile-Avatar-PNG.png" alt="profile"></img>
-                    <strong className="name">Bikram</strong>
+                    <strong className="name">{username}</strong>
                     <div className="logout">
                         <a>Logout</a>
                     </div>
@@ -85,12 +85,6 @@ function useNavbar() {
         )
     };
 
-    function Login() {
-        return (
-            <div className="profile-dropdown">
-                <strong className="name">Login</strong>
-            </div>
-        )
-    }
+
 }
 export default useNavbar

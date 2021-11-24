@@ -6,7 +6,6 @@ import './Login.css'
 
 
 function Login() {
-
     const history = useHistory();
     const [state, setstate] = useState({
         username: "",
@@ -14,9 +13,17 @@ function Login() {
     })
     const { username, password } = state;
 
+    function handleChange(e) {
+        const name = e.target.name
+        setstate({
+            ...state,
+            [name]: e.target.value
+        })
+    }
+
     function handleLogin(e) {
         e.preventDefault();
-        if (username == "admin" && password == "admin") {
+        if (username === "admin" && password === "admin") {
             history.push('/')
             console.log("Login successful...")
         } else {
@@ -39,18 +46,14 @@ function Login() {
                             type="text"
                             placeholder="username"
                             name="username"
-                            value={state.username}
-                            onChange={(e) => {
-                                setstate({ ...state, username: e.target.value })
-                            }} />
+                            value={username}
+                            onChange={handleChange} />
                         <input
                             type="password"
                             placeholder="password"
                             name="password"
-                            value={state.password}
-                            onChange={(e) => {
-                                setstate({ ...state, password: e.target.value })
-                            }} />
+                            value={password}
+                            onChange={handleChange} />
                         <button onClick={handleLogin}>login</button>
                         <p className="message">Not registered? <a href="#">Create an account</a></p>
                     </form>
@@ -59,4 +62,5 @@ function Login() {
         </>
     )
 }
+
 export default Login

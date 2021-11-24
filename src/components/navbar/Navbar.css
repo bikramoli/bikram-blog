@@ -2,29 +2,18 @@
 /* elements */
 .linkGroup a{
     padding: 2px 0;
-    margin: 0.5rem;
+    margin: 0.3rem;
     text-decoration: none;
     list-style-type: none;
     display: inline-block;
     color: rgb(20, 2, 2);
     font-weight: bold ;
-    font-size: 18px; 
+    font-size: 15px; 
 }
 .linkGroup a:hover{
     color:blueviolet;
 }
 
-/* .toggle{
-    font-size: 30px;
-    margin-right: 30px;
-    color: rgb(219, 95, 95);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    float: right;
-    height: 10px;
-} */
 /* Classes */
 .navBar{
     position: fixed;
