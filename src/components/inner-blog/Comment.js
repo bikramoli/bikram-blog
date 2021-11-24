@@ -48,7 +48,7 @@ const Comment = () => {
                         }
                     }>
                 </input>
-                <div style={{ textAlign: "end" }}>
+                <div className="submit">
                     <button onClick={handleSubmit}>Submit</button>
                 </div>
             </form>

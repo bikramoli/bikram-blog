@@ -1,8 +1,8 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 import useNavbar from './components/navbar/Navbar';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect, useHistory } from 'react-router-dom';
 import Home from './pages/Home';
 import InnerBlog from './components/inner-blog/InnerBlog';
 import Footer from './components/footer/Footer';
@@ -12,6 +12,7 @@ import Login from './pages/Login';
 
 
 function App() {
+
   const { render, ThemeColor } = useNavbar()
   return (
     <BrowserRouter>
