@@ -8,19 +8,24 @@ toast.configure();
 const Comment = () => {
     const [state, setstate] = useState({
         Comment: "",
-        Comments: []
+        Comments: [],
+        isNotEmpty: false
     })
-    const { Comment, Comments } = state
+
+    const { Comment, Comments, isNotEmpty } = state
+
+    //function get called when submit button is clicked
     const handleSubmit = (e) => {
         e.preventDefault();
         const comments = { Comment }
-        // setstate({ Comments: [comments], Comment: "" })
-        setstate({
-            ...state,
-            Comments: [...Comments, comments],
-            Comment: ""
-        })
-        toast("Comment added successfully!!!", { position: toast.POSITION.TOP_CENTER })
+        isNotEmpty && Comment.length >= 1 ?
+            setstate({
+                ...state,
+                Comments: [...Comments, comments],
+                Comment: ""
+            }) :
+            toast("Please add some comment", { position: toast.POSITION.TOP_CENTER })
+
     }
 
     return (
@@ -38,7 +43,8 @@ const Comment = () => {
                         (e) => {
                             setstate({
                                 ...state,
-                                Comment: e.target.value
+                                Comment: e.target.value,
+                                isNotEmpty: true
                             })
                         }
                     }>
