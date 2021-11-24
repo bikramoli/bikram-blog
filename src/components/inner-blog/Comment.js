@@ -17,6 +17,9 @@ const Comment = () => {
             Comments: [...Comments, comments],
             Comment: ""
         })
+        window.setTimeout(() => {
+            alert("Successfully added")
+        }, 1000)
     }
 
     return (
