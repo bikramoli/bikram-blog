@@ -13,7 +13,7 @@ function useNavbar() {
     const [isClick2, setisClick2] = useState(false)
     const [isClick3, setisClick3] = useState(false)
     const [username, setUsername] = useState("Bishal")
-    const [isLogin, setIsLogin] = useState(true)
+    const [isLogin, setIsLogin] = useState(false)
 
 
     function handleClick1() {
@@ -42,7 +42,13 @@ function useNavbar() {
                 <div className="top-nav"></div>
 
                 <div className="navBar" style={{ borderTop: `solid ${ThemeColor} 10px` }}>
-                    {isLogin ? <Logout /> : <Login />}
+                    {
+                        isLogin ?
+                            <Logout />
+                            : <div className="profile-dropdown">
+                                <Link to="/login">Login</Link>
+                            </div>
+                    }
                     <div >
                         <div className="linkGroup">
                             <a><Link to="/">Home</Link></a>
@@ -61,10 +67,10 @@ function useNavbar() {
                         </div>
                     </div>
                 </div>
-
             </div>
         )
     };
+
     function Logout() {
         return (
             <>
@@ -86,6 +92,5 @@ function useNavbar() {
             </div>
         )
     }
-
 }
 export default useNavbar
