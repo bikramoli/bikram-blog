@@ -14,6 +14,7 @@ import Login from './pages/Login';
 function App() {
 
   const { render, ThemeColor } = useNavbar()
+
   return (
     <BrowserRouter>
       {render}
@@ -23,7 +24,6 @@ function App() {
         <Route exact="true" path="/about" component={About} />
         <Route exact="true" path="/fetchdata" component={FetchApi} />
         <Route exact="true" path="/login" component={Login} />
-        {/* <Redirect to="/" /> //manage to return page back to its initial position when mistyped in url */}
       </Switch>
       <Footer Themecolor={ThemeColor} />
     </BrowserRouter>

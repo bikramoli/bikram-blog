@@ -4,7 +4,8 @@ import { FaAlignRight, FaTwitter } from "react-icons/fa"
 import { FaGithub } from "react-icons/fa";
 import { FaTools } from "react-icons/fa";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Navbar.css'
+import profileIcon from './profileIcon.png';
+import './Navbar.css';
 
 
 function useNavbar() {
@@ -14,7 +15,6 @@ function useNavbar() {
     const [isClick3, setisClick3] = useState(false)
     const [isLogin, setIsLogin] = useState(true)
     const [username, setUsername] = useState('Seejan')
-
 
     function handleClick1() {
         setThemeColor("#8A2BE2");
@@ -49,6 +49,7 @@ function useNavbar() {
                                 <Link to="/login">Login</Link>
                             </div>
                     }
+
                     <div >
                         <div className="linkGroup">
                             <a><Link to="/">Home</Link></a>
@@ -58,9 +59,15 @@ function useNavbar() {
                             <a><div className="dropdown">
                                 <a className="dropbtn"><FaTools /></a>
                                 <div className="dropdown-content">
-                                    <a onClick={handleClick1} style={{ color: isClick1 ? ThemeColor : "#000000" }}>Bluevilote</a>
-                                    <a onClick={handleClick2} style={{ color: isClick2 ? ThemeColor : "#000000" }}>Lime</a>
-                                    <a onClick={handleClick3} style={{ color: isClick3 ? ThemeColor : "#000000" }}>DarkGray</a>
+                                    <a onClick={handleClick1}
+                                        style={{ color: isClick1 ? ThemeColor : "#000000" }}>
+                                        Bluevilote</a>
+                                    <a onClick={handleClick2}
+                                        style={{ color: isClick2 ? ThemeColor : "#000000" }}>
+                                        Lime</a>
+                                    <a onClick={handleClick3}
+                                        style={{ color: isClick3 ? ThemeColor : "#000000" }}>
+                                        DarkGray</a>
 
                                 </div>
                             </div></a>
@@ -75,7 +82,7 @@ function useNavbar() {
         return (
             <>
                 <div className="profile-dropdown" onClick={() => { alert("hello") }}>
-                    <img className="profile" src="https://www.pngall.com/wp-content/uploads/5/Profile-Avatar-PNG.png" alt="profile"></img>
+                    <img className="profile" src={profileIcon} alt="pp"></img>
                     <strong className="name">{username}</strong>
                     <div className="logout">
                         <a>Logout</a>
@@ -84,6 +91,7 @@ function useNavbar() {
             </>
         )
     };
+
 
 
 }
