@@ -1,8 +1,6 @@
 .innerBlog{
-    
     width: inherit;
     background: white;
-    text-align: center;
     padding: 1rem;
     margin: 2rem;
     margin-left: 5rem;
@@ -15,7 +13,7 @@
 .innerBlogCover{
     display: flex;
     justify-content: center;
-    align-items: center;
+    
 }
 @media screen and (min-width: 768px) {
     .innerBlogCover{
@@ -26,12 +24,27 @@
     width: 100%;
     margin-top: 7rem;
     font-size: 20px;
-    
-   
 }
 .innerBlog1 li{
     list-style-type: none;
     padding: 1.5rem;
     font-weight: bold;
     font-family: cursive;
+}
+.innerBlog img{
+    width: 100%;
+    height: 500px;
+}
+.innerBlog strong-1{
+    background-color: blueviolet;
+    color: white;
+}
+.tag-1{
+    background-color: blueviolet;
+    color: white;
+}
+.author{
+    float: right;
+    color: black;
+    
 }

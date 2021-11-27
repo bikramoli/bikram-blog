@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 toast.configure();
 
 const Comment = () => {
-    const useRefInput = useRef(null); //useRef is used to target perticular are of DOM
+    const useRefInput = useRef(null); //useRef is used to target perticular are of DOM but dosnt trigger re-render
 
     const [state, setstate] = useState({
         Comment: "",

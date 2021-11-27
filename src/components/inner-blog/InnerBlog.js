@@ -15,10 +15,11 @@ function InnerBlog() {
         <>
             <div className="innerBlogCover">
                 <div className="innerBlog">
-                    <h1>{Datas[id].tag}</h1>
+                    <strong className="tag-1">* {Datas[id].tag} *</strong>
+                    <span> <strong className="author">Author: {Datas[id].author}</strong></span>
                     <h2>{Datas[id].title}</h2>
+                    <img src={Datas[id].img}></img>
                     <p>{Datas[id].description}</p>
-                    <strong>{Datas[id].author}</strong>
                     <p>{Datas[1].content}</p>
 
                 </div>
