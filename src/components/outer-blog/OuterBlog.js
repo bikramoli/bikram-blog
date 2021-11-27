@@ -26,7 +26,6 @@ function OuterBlog(props) {
                 <span>Learn more{" "}
                     <span><FaArrowAltCircleRight /></span>
                 </span>
-
                 <span className="author">
                     <strong> {props.author}</strong>
                     <li>{props.date}</li>

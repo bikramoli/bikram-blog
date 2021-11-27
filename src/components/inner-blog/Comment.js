@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import './Comment.css'
 import { toast } from "react-toastify";
@@ -6,6 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 toast.configure();
 
 const Comment = () => {
+    const useRefInput = useRef(null); //useRef is used to target perticular are of DOM
+
     const [state, setstate] = useState({
         Comment: "",
         Comments: [],
@@ -26,6 +28,9 @@ const Comment = () => {
             }) :
             toast("Please add some comment", { position: toast.POSITION.BOTTOM_CENTER })
     }
+    useEffect(() => {
+        useRefInput.current.focus(); // This will target the area where useRefInput is define and focusfunction is run.
+    })
 
     return (
         <>
@@ -37,6 +42,7 @@ const Comment = () => {
                     placeholder="Please type some comment here..."
                     id="comment"
                     name="Comment"
+                    ref={useRefInput}
                     value={state.Comment}
                     onChange={
                         (e) => {
