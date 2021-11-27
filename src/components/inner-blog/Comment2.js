@@ -5,38 +5,42 @@ import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure();
 
-const Comment = () => {
-    const useRefInput = useRef(null); //useRef is used to target perticular are of DOM but dosnt trigger re-render
+const Comment2 = () => {
+    //useRef is used to target perticular are of DOM but dosnt trigger re-render
+    const [Comment, setComment] = useState("")
 
-    const [state, setstate] = useState({
-        Comment: "",
+    function reducer(state, action) {
+        if (action.type === "ADD_COMMENT") {
+            return {
+                ...state,
+                Comments: [...state.Comments, action.payload],
+                isNotEmpty: true,
+                isAdded: true,
+                toastMsg: "Comment added successfully!!!"
+            }
+        }
+        return state;
+    }
+    const [state, dispatch] = useReducer(reducer, initialState)
+    const initialState = {
         Comments: [],
         isNotEmpty: false,
         isAdded: false,
         toastMsg: ""
-    })
+    }
 
-    const { Comment, Comments, isNotEmpty, isAdded, toastMsg } = state
+    const { isAdded, toastMsg } = state
 
     //function get called when submit button is clicked
     const handleSubmit = (e) => {
         e.preventDefault();
-        const comments = { Comment }
-        isNotEmpty && Comment.length >= 1 ?
-            setstate({
-                ...state,
-                Comments: [...Comments, comments],
-                Comment: "",
-                isAdded: true,
-                toastMsg: "Comment added successfully!!!"
-            }) :
-            // toast("Please add some comment", { position: toast.POSITION.BOTTOM_CENTER })
-            setstate({ ...state, toastMsg: "Please add some comment" })
+        const comments = { Comment };
+        Comment.length >= 1
+            ?
+            dispatch({ type: "ADD_COMMENT", payload: comments })
+            :
+            toast("Please add some comment", { position: toast.POSITION.BOTTOM_CENTER })
     }
-    useEffect(() => {
-        useRefInput.current.focus(); // This will target the area where useRefInput is define and focusfunction is run.
-    })
-
     return (
         <>
             <form className='form'>
@@ -48,17 +52,11 @@ const Comment = () => {
                     placeholder="Please type some comment here..."
                     id="comment"
                     name="Comment"
-                    ref={useRefInput}
-                    value={state.Comment}
-                    onChange={
-                        (e) => {
-                            setstate({
-                                ...state,
-                                Comment: e.target.value,
-                                isNotEmpty: true
-                            })
-                        }
-                    }>
+                    onChange={(e) => {
+                        setComment(e.target.value)
+                    }}
+                    value={Comment}
+                >
                 </input>
                 <div className="submit">
                     <button onClick={handleSubmit}>Submit</button>
@@ -82,4 +80,4 @@ function Toast(props) {
         <div style={{ textAlign: "center", color: "red", background: "lightgray" }}><strong>{props.toastMsg}</strong></div>
     )
 }
-export default Comment;
+export default Comment2;

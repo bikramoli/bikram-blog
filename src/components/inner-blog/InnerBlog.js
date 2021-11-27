@@ -7,6 +7,7 @@ import { useParams } from 'react-router';
 import Comment from './Comment';
 
 import './InnerBlog.css'
+import Comment2 from './Comment2';
 
 function InnerBlog() {
     var { id } = useParams();
@@ -31,7 +32,7 @@ function InnerBlog() {
                 </ul>
             </div>
             <div style={{ marginBottom: "4rem" }}>
-                <Comment />
+                <Comment2 />
             </div>
         </>
     )
