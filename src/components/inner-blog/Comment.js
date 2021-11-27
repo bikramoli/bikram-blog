@@ -36,6 +36,7 @@ const Comment = () => {
         <>
             <form className='form'>
                 <h1>Comment Section</h1>
+                {<Toast />}
                 <label>Comment:</label>{" "}
                 <input className='form-input'
                     type='text'
@@ -69,6 +70,11 @@ const Comment = () => {
                 })}
             </div>
         </>
+    )
+}
+function Toast() {
+    return (
+        <div style={{ textAlign: "center", color: "red" }}><strong>Comment added successfully</strong></div>
     )
 }
 export default Comment;
