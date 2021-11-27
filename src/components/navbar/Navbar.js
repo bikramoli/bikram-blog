@@ -13,8 +13,8 @@ function useNavbar() {
     const [isClick1, setisClick1] = useState(false)
     const [isClick2, setisClick2] = useState(false)
     const [isClick3, setisClick3] = useState(false)
-    const [isLogin, setIsLogin] = useState(true)
-    const [username, setUsername] = useState('Seejan')
+    const [isLogin, setIsLogin] = useState(false)
+    const [username, setUsername] = useState('Bikram')
 
     function handleClick1() {
         setThemeColor("#8A2BE2");
@@ -79,6 +79,7 @@ function useNavbar() {
     };
 
     function Logout() {
+
         return (
             <>
                 <div className="profile-dropdown" onClick={() => { alert("hello") }}>
