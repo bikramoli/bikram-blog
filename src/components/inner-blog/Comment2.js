@@ -21,7 +21,13 @@ const Comment2 = () => {
         }
         return state;
     }
-    const [state, dispatch] = useReducer(reducer, initialState)
+    const [state, dispatch] = useReducer(reducer, {
+        Comments: [],
+        isNotEmpty: false,
+        isAdded: false,
+        toastMsg: "",
+        id: Math.random *10
+    })
     const initialState = {
         Comments: [],
         isNotEmpty: false,
@@ -29,7 +35,7 @@ const Comment2 = () => {
         toastMsg: ""
     }
 
-    const { isAdded, toastMsg } = state
+    const {Comments, isAdded, toastMsg } = state
 
     //function get called when submit button is clicked
     const handleSubmit = (e) => {
@@ -63,15 +69,16 @@ const Comment2 = () => {
                 </div>
             </form>
             <div>
-                {state.Comments.map((commen, index) => {
+                {state.Comments.map((commen,index, id) => {
                     const { Comment } = commen
                     return (
                         <div className="comment-list">
-                            <li key={index}><strong>Comment{index + 1}:</strong>{" "}{Comment}</li>
+                            <li key={id}><strong>Comment{index + 1}:</strong>{" "}{Comment}</li>
                         </div>
                     )
                 })}
             </div>
+
         </>
     )
 }
