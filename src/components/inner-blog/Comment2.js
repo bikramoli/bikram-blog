@@ -3,39 +3,44 @@ import React, { useState, useEffect, useRef, useReducer } from "react";
 import './Comment.css'
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { Card, Form } from "reactstrap";
 toast.configure();
 
 const Comment2 = () => {
-    //useRef is used to target perticular are of DOM but dosnt trigger re-render
+    const useRefInput = useRef(null)//useRef is used to target perticular are of DOM but dosnt trigger re-render
+
     const [Comment, setComment] = useState("")
 
     function reducer(state, action) {
         if (action.type === "ADD_COMMENT") {
+            setComment("")
             return {
                 ...state,
                 Comments: [...state.Comments, action.payload],
                 isNotEmpty: true,
                 isAdded: true,
-                toastMsg: "Comment added successfully!!!"
+                toastMsg: "Comment added successfully!!!",
+            }
+        }
+        if(action.type==="NO_COMMENT"){
+            setComment("")
+            return{
+                ...state,
+                isAdded:true,
+                toastMsg:"Please add some comment"
             }
         }
         return state;
     }
-    const [state, dispatch] = useReducer(reducer, {
-        Comments: [],
-        isNotEmpty: false,
-        isAdded: false,
-        toastMsg: "",
-        id: Math.random *10
-    })
     const initialState = {
         Comments: [],
         isNotEmpty: false,
         isAdded: false,
         toastMsg: ""
     }
-
-    const {Comments, isAdded, toastMsg } = state
+    const [state, dispatch] = useReducer(reducer, initialState)
+   
+    const { isAdded, toastMsg } = state
 
     //function get called when submit button is clicked
     const handleSubmit = (e) => {
@@ -45,14 +50,19 @@ const Comment2 = () => {
             ?
             dispatch({ type: "ADD_COMMENT", payload: comments })
             :
-            toast("Please add some comment", { position: toast.POSITION.BOTTOM_CENTER })
+            dispatch({type: "NO_COMMENT"})
+            // toast("Please add some comment", { position: toast.POSITION.BOTTOM_CENTER })
     }
+    useEffect(()=>{
+        useRefInput.current.focus();
+        console.log(useRefInput.current)
+    })
     return (
-        <>
+           <div className="Comment-form">
             <form className='form'>
-                <h1>Comment Section</h1>
+                <h4>Comment:</h4>
                 {isAdded && <Toast toastMsg={toastMsg} />}
-                <label>Comment:</label>{" "}
+                {/* <label>Comment:</label>{" "} */}
                 <input className='form-input'
                     type='text'
                     placeholder="Please type some comment here..."
@@ -62,6 +72,7 @@ const Comment2 = () => {
                         setComment(e.target.value)
                     }}
                     value={Comment}
+                    ref={useRefInput}
                 >
                 </input>
                 <div className="submit">
@@ -78,8 +89,9 @@ const Comment2 = () => {
                     )
                 })}
             </div>
-
-        </>
+            
+           </div>
+        
     )
 }
 function Toast(props) {

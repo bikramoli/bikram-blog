@@ -1,27 +1,33 @@
-.form{
-margin-left: 10rem;
-margin-right: 28rem;
+/* @media screen and (min-width: 668px) {
+  .form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+} */
+.form-input {
+  height: 150px;
+  width: 100%;
+  max-width: 600px;
+  min-width: 200px;
+  background: #f2f2f2;
 }
-.form-input{
-    height: 150px;
-    width: 100%;
-    background: #f2f2f2;
+.comment-list {
+  padding-left: 10rem;
 }
-.comment-list{
-    padding-left: 10rem;
+.submit button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background-color: #328f8a;
+  background-image: linear-gradient(45deg, #328f8a, #08ac4b);
+  border: 0;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
 }
-.submit button{
-    font-family: "Roboto", sans-serif;
-    text-transform: uppercase;
-    outline: 0;
-    background-color: #328f8a;
-    background-image: linear-gradient(45deg,#328f8a,#08ac4b);
-    width: 100%;
-    border: 0;
-    padding: 15px;
-    color: #FFFFFF;
-    font-size: 14px;
-    -webkit-transition: all 0.3 ease;
-    transition: all 0.3 ease;
-    cursor: pointer;
+
+body {
+  background-color: rgb(240, 236, 236);
 }
