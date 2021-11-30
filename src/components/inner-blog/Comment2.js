@@ -3,14 +3,16 @@ import React, { useState, useEffect, useRef, useReducer } from "react";
 import './Comment.css'
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import { FaLinkedin } from "react-icons/fa";
+import { FaBeer, FaHeart, FaLinkedin, FaRegThumbsDown, FaRegThumbsUp, FaThumbsDown, FaThumbsUp } from "react-icons/fa";
+import { Card } from "reactstrap";
 toast.configure();
 
 const Comment2 = () => {
     const useRefInput = useRef(null)//useRef is used to target perticular are of DOM but dosnt trigger re-render
 
     const [Comment, setComment] = useState("");
-    const [Like, setLike]=useState(0);
+    const [Like, setLike] = useState(0);
+    const [Dislike, setDislike] = useState(0);
 
     function reducer(state, action) {
         if (action.type === "ADD_COMMENT") {
@@ -60,11 +62,20 @@ const Comment2 = () => {
     })
     return (
            <div className="Comment-form">
-            <form className='form'>
-                <h4>Comment:</h4><button style={{float:"right"}} onClick={(e)=>{
+                <h4>Comment:</h4>
+                <button style={{float:"right"}} 
+                onClick={(e)=>{
+                   e.preventDefault();
+                    setDislike(Dislike+1)
+                }}>{Dislike}{" "}{Dislike===0?<FaRegThumbsDown/>:<FaThumbsDown/>}</button>
+
+                <button style={{float:"right"}} 
+                onClick={(e)=>{
                    e.preventDefault();
                     setLike(Like+1)
-                }}>{Like}{" "}Likes</button>
+                }}>{Like}{" "}{Like===0?<FaRegThumbsUp/>:<FaThumbsUp/>}</button>
+                
+            <form className='form'>               
                 {isAdded && <Toast toastMsg={toastMsg} />}
                 <input className='form-input'
                     type='text'
@@ -86,9 +97,9 @@ const Comment2 = () => {
                 {state.Comments.map((commen,index, id) => {
                     const { Comment } = commen
                     return (
-                        <div className="comment-list">
+                        <Card className="comment-list">
                             <li key={id}><strong>Comment{index + 1}:</strong>{" "}{Comment}</li>
-                        </div>
+                        </Card>
                     )
                 })}
             </div>

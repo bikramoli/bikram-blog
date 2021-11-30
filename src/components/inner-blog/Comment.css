@@ -20,6 +20,7 @@
 }
 .comment-list {
   padding-left: 0rem;
+  list-style: none;
 }
 .submit button {
   font-family: "Roboto", sans-serif;
