@@ -16,13 +16,12 @@ function OuterBlog(props) {
     }
 
     return (
+        <div style={{width:"350px", height:"280px"}}>
         <div className="outerBlog" style={{ borderBottom: `solid ${props.ThemeColor}` }} onClick={handleRoute}>
-
             <span className="tag" style={{ background: props.ThemeColor }}>{props.tag}</span>
             <h4 className="title">{props.title}</h4>
             <p>{props.description}</p>
             <div className="base">
-
                 <span>Learn more{" "}
                     <span><FaArrowAltCircleRight /></span>
                 </span>
@@ -31,6 +30,7 @@ function OuterBlog(props) {
                     <li>{props.date}</li>
                 </span>
             </div>
+        </div>
         </div>
 
     )

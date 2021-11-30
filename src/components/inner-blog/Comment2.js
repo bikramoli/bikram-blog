@@ -3,13 +3,14 @@ import React, { useState, useEffect, useRef, useReducer } from "react";
 import './Comment.css'
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import { Card, Form } from "reactstrap";
+import { FaLinkedin } from "react-icons/fa";
 toast.configure();
 
 const Comment2 = () => {
     const useRefInput = useRef(null)//useRef is used to target perticular are of DOM but dosnt trigger re-render
 
-    const [Comment, setComment] = useState("")
+    const [Comment, setComment] = useState("");
+    const [Like, setLike]=useState(0);
 
     function reducer(state, action) {
         if (action.type === "ADD_COMMENT") {
@@ -60,9 +61,11 @@ const Comment2 = () => {
     return (
            <div className="Comment-form">
             <form className='form'>
-                <h4>Comment:</h4>
+                <h4>Comment:</h4><button style={{float:"right"}} onClick={(e)=>{
+                   e.preventDefault();
+                    setLike(Like+1)
+                }}>{Like}{" "}Likes</button>
                 {isAdded && <Toast toastMsg={toastMsg} />}
-                {/* <label>Comment:</label>{" "} */}
                 <input className='form-input'
                     type='text'
                     placeholder="Please type some comment here..."

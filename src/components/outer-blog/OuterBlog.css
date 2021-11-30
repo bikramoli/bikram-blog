@@ -1,42 +1,41 @@
-.outerBlog{
-    padding: 1rem;
-    width: 330px;
-    height: 270px;
-    text-decoration: none;
-    color: black;
-    margin: 2rem;
+.outerBlog {
+  padding: 1rem;
+  width: 330px;
+  height: 270px;
+  text-decoration: none;
+  color: black;
+  margin: 2rem;
 }
-.outerBlog:hover{
-    background-color: white;
-    cursor: pointer;
-    padding: 0.5rem;
-    font-size: 102%;
-    width: 405px;
-    height: 275px;
-    box-shadow: 2px 8px 2px 1px #969696;
+.outerBlog:hover {
+  background-color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 102%;
+  width: 340px;
+  height: 275px;
+  box-shadow: 2px 8px 2px 1px #969696;
 }
-.title{
-    padding-bottom: 1rem;
-    padding-top: 1rem;
+.title {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 }
-.author{
-    padding-top: 0rem;
+.author {
+  padding-top: 0rem;
 }
-.tag{
-    height: 20px;
-    padding: 0.3rem;
-    color: white;
-    font-weight: bold;
-    background-color: brown;
+.tag {
+  height: 20px;
+  padding: 0.3rem;
+  color: white;
+  font-weight: bold;
+  background-color: brown;
 }
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
-.base{
-    margin-top: 2rem;
+.base {
+  margin-top: 2rem;
 }
-.author{
-    float: right;
-    list-style-type: none;
+.author {
+  float: right;
+  list-style-type: none;
 }
-
